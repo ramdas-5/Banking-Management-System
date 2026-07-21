@@ -1,255 +1,457 @@
-{# 🏦 Banking Management System
+# 🏦 Banking Management System
 
-A secure, desktop-based Banking Management System built with Python, Tkinter, and SQLite.  
-Developed as an academic project for **Brainware University** to demonstrate practical software engineering skills.
+<div align="center">
 
-![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
-![Tkinter](https://img.shields.io/badge/GUI-Tkinter-orange)
-![SQLite](https://img.shields.io/badge/Database-SQLite-lightgrey)
-![License](https://img.shields.io/badge/License-MIT-green)
+### 💳 Secure Desktop Banking Application
 
----
+*A modern Banking Management System built with **Python**, **Tkinter**, and **SQLite**.*
 
-## 📑 Table of Contents
+Developed as an academic project for **Brainware University** to demonstrate practical **Software Engineering**, **Database Management**, and **GUI Application Development** skills.
 
-- [Features](#-features)
-- [Tech Stack](#-tech-stack)
-- [System Architecture](#-system-architecture)
-- [Installation](#-installation)
-- [Usage Guide](#-usage-guide)
-- [Project Structure](#-project-structure)
-- [Screenshots](#-screenshots)
-- [Team & Roles](#-team--roles)
-- [Project Roadmap](#-project-roadmap)
-- [Risk Management](#-risk-management)
-- [Tools & Resources](#-tools--resources)
-- [Future Enhancements](#-future-enhancements)
-- [License](#-license)
-- [Acknowledgements](#-acknowledgements)
+<br>
+
+![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Tkinter](https://img.shields.io/badge/GUI-Tkinter-FF8C00?style=for-the-badge)
+![SQLite](https://img.shields.io/badge/Database-SQLite-003B57?style=for-the-badge&logo=sqlite)
+![MIT License](https://img.shields.io/badge/License-MIT-success?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge)
+![Brainware University](https://img.shields.io/badge/Brainware-University-blueviolet?style=for-the-badge)
+
+</div>
 
 ---
 
-## ✨ Features
+# 📚 Table of Contents
 
-- **User Account Management** – Register with auto-generated 10-digit account number.
-- **Secure Login** – PIN hashed with SHA-256, no plain-text storage.
-- **Dashboard** – Real-time balance, transaction history, quick actions.
-- **Transactions**
-  - Deposit money
-  - Withdraw money (with balance validation)
-  - Transfer funds to other accounts instantly
-- **Admin Panel** – View all customer accounts and balances (password protected).
-- **Transaction Logs** – Complete audit trail of every financial activity.
-- **Modern GUI** – Clean, responsive interface built with themed `ttk` widgets.
-- **Data Persistence** – SQLite database ensures data survives app restarts.
-
----
-
-## 🛠 Tech Stack
-
-| Layer        | Technology               |
-|--------------|--------------------------|
-| Language     | Python 3                  |
-| GUI Library  | Tkinter (ttk)            |
-| Database     | SQLite3                  |
-| Security     | SHA-256 hashing          |
-| Version Control | Git & GitHub (planned) |
+- [✨ Features](#-features)
+- [🛠 Tech Stack](#-tech-stack)
+- [🏗 System Architecture](#-system-architecture)
+- [🚀 Installation](#-installation)
+- [📖 Usage Guide](#-usage-guide)
+- [📂 Project Structure](#-project-structure)
+- [📸 Screenshots](#-screenshots)
+- [👥 Team & Roles](#-team--roles)
+- [🗓 Development Roadmap](#-development-roadmap)
+- [⚠ Risk Management](#-risk-management)
+- [🧰 Tools & Resources](#-tools--resources)
+- [🔮 Future Enhancements](#-future-enhancements)
+- [📄 License](#-license)
+- [🙏 Acknowledgements](#-acknowledgements)
 
 ---
 
-## 🧱 System Architecture
-[ User / Admin ]
-│
-▼
-┌─────────────────┐
-│ Tkinter GUI │ (Login, Register, Dashboard, Admin Panel)
-└────────┬────────┘
-│
-┌────────▼────────┐
-│ Logic Layer │ (Authentication, Transaction Processing)
-└────────┬────────┘
-│
-┌────────▼────────┐
-│ SQLite DB │ (accounts, transactions tables)
-└─────────────────┘
+# ✨ Features
 
-text
+### 👤 Account Management
+- Create a new bank account
+- Auto-generated **10-digit Account Number**
+- Secure PIN registration
+
+### 🔐 Authentication
+- Secure Login System
+- PIN encrypted using **SHA-256**
+- No plain-text password storage
+
+### 💰 Banking Operations
+- Deposit Money
+- Withdraw Money
+- Fund Transfer
+- Balance Validation
+- Real-time Balance Updates
+
+### 📊 Dashboard
+- Current Balance
+- Recent Transactions
+- Quick Banking Actions
+
+### 🛡 Admin Panel
+- View all customer accounts
+- Monitor balances
+- Password-protected access
+
+### 📝 Transaction History
+- Complete audit trail
+- Deposit records
+- Withdraw records
+- Transfer records
+
+### 🎨 User Interface
+- Modern Tkinter UI
+- Responsive Layout
+- ttk Widgets
+- Easy Navigation
+
+### 💾 Database
+- SQLite Database
+- Automatic Data Saving
+- Persistent Storage
 
 ---
 
-## 🚀 Installation
+# 🛠 Tech Stack
 
-### Prerequisites
-- Python 3.8 or higher (Tkinter and SQLite are included by default)
+| Category | Technology |
+|-----------|------------|
+| 💻 Language | Python 3 |
+| 🖥 GUI | Tkinter (ttk) |
+| 🗄 Database | SQLite3 |
+| 🔒 Security | SHA-256 Hashing |
+| 📦 Version Control | Git & GitHub *(Planned)* |
 
-### Steps
+---
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/your-username/banking-management-system.git
-   cd banking-management-system
-Run the application
+# 🏗 System Architecture
 
-bash
+```text
+                    ┌────────────────────┐
+                    │    User / Admin    │
+                    └─────────┬──────────┘
+                              │
+                              ▼
+               ┌────────────────────────────┐
+               │        Tkinter GUI         │
+               │                            │
+               │ • Login                    │
+               │ • Registration             │
+               │ • Dashboard                │
+               │ • Admin Panel              │
+               └────────────┬───────────────┘
+                            │
+                            ▼
+               ┌────────────────────────────┐
+               │      Business Logic        │
+               │                            │
+               │ • Authentication           │
+               │ • Transactions             │
+               │ • Validation               │
+               │ • Account Management       │
+               └────────────┬───────────────┘
+                            │
+                            ▼
+               ┌────────────────────────────┐
+               │       SQLite Database      │
+               │                            │
+               │ • accounts                 │
+               │ • transactions             │
+               └────────────────────────────┘
+```
+
+---
+
+# 🚀 Installation
+
+## Prerequisites
+
+- Python **3.8+**
+- Tkinter *(Included with Python)*
+- SQLite *(Included with Python)*
+
+---
+
+## Clone Repository
+
+```bash
+git clone https://github.com/your-username/banking-management-system.git
+
+cd banking-management-system
+```
+
+---
+
+## Run Application
+
+```bash
 python main.py
-No additional dependencies are required.
+```
 
-Initialise the database
-The database bank.db is created automatically on the first run.
-Default admin credentials:
+No additional packages are required.
 
-Account Number: ADMIN
+---
 
-PIN: admin123
+## Database
 
-📘 Usage Guide
-1. New User Registration
-Click "Create New Account" on the login screen.
+The SQLite database (`bank.db`) is automatically created during the first run.
 
-Enter your full name, a 4-6 digit PIN, and an optional initial deposit.
+### Default Admin Login
 
-Save the auto-generated account number displayed after registration – you will need it to log in.
+| Field | Value |
+|-------|-------|
+| Account Number | `ADMIN` |
+| PIN | `admin123` |
 
-2. Login
-Enter your account number and PIN.
+---
 
-Regular users are taken to the Dashboard; the admin account (ADMIN) opens the Admin Panel.
+# 📖 Usage Guide
 
-3. Dashboard
-Balance is displayed at the top.
+## 👤 1. Register
 
-Deposit / Withdraw: Enter amount and confirm.
+- Click **Create New Account**
+- Enter Full Name
+- Create a 4–6 digit PIN
+- Optional Initial Deposit
+- Save the generated Account Number
 
-Transfer: Provide the recipient's account number and amount.
-(Both accounts' balances are updated atomically.)
+---
 
-Transaction History: The last 20 transactions are shown in a table.
+## 🔐 2. Login
 
-4. Admin Panel
-Lists all non-admin accounts with their current balances.
+Enter:
 
-Use the Refresh button to reload data.
+- Account Number
+- PIN
 
-📁 Project Structure
-text
+### Access
+
+| User Type | Destination |
+|-----------|-------------|
+| Customer | Dashboard |
+| ADMIN | Admin Panel |
+
+---
+
+## 💰 3. Dashboard
+
+Available Operations
+
+- Deposit Money
+- Withdraw Money
+- Transfer Money
+- View Balance
+- Transaction History
+
+The latest **20 transactions** are displayed.
+
+---
+
+## 🛡 4. Admin Panel
+
+Administrator can:
+
+- View all accounts
+- View balances
+- Refresh account list
+
+---
+
+# 📂 Project Structure
+
+```text
 banking-management-system/
 │
-├── main.py                # Entry point – launches the application
-├── bank.db                # SQLite database file (auto-generated)
-├── README.md              # Project documentation
-└── screenshots/           # (Optional) UI screenshots
-The entire application is modularised within main.py using classes for each frame.
+├── main.py
+│   └── Main Application
+│
+├── bank.db
+│   └── SQLite Database (Auto Generated)
+│
+├── README.md
+│   └── Documentation
+│
+└── screenshots/
+    ├── login.png
+    ├── register.png
+    ├── dashboard.png
+    ├── transfer.png
+    └── admin.png
+```
 
-📸 Screenshots
-Add your actual screenshots here. Suggested captures:
+---
 
-Screen	Placeholder
-Login Screen	https://screenshots/login.png
-Registration	https://screenshots/register.png
-Dashboard	https://screenshots/dashboard.png
-Transfer Dialog	https://screenshots/transfer.png
-Admin Panel	https://screenshots/admin.png
-👥 Team & Roles
-Team Member	Role(s)
-Ramdas Hembram	Project Manager, Backend Developer, Database Developer, Documentation Lead
-Aditto Rudra	Frontend/UI Developer, Testing & Quality Assurance
-Brainware University – Department of Computer Science
+# 📸 Screenshots
 
-🗓 Project Roadmap
-The following roadmap was followed over an 8‑week development cycle:
+| Screen | Image |
+|---------|-------|
+| Login | screenshots/login.png |
+| Register | screenshots/register.png |
+| Dashboard | screenshots/dashboard.png |
+| Transfer | screenshots/transfer.png |
+| Admin Panel | screenshots/admin.png |
 
-Phase 1: Initiation & Planning (Week 1)
-Define project scope and functional requirements
+> *(Replace with actual screenshots.)*
 
-Deliverable: Project proposal document
+---
 
-Lead: Ramdas (PM)
+# 👥 Team & Roles
 
-Phase 2: UI/UX Design (Week 2)
-Sketch wireframes for Login, Dashboard, Admin Panel
+| Team Member | Responsibilities |
+|--------------|------------------|
+| **Ramdas Hembram** | Project Manager • Backend Developer • Database Developer • Documentation Lead |
+| **Aditto Rudra** | Frontend Developer • UI Designer • Testing & Quality Assurance |
 
-Choose colour scheme and widget styles (AppStyle class)
+### 🎓 Institution
 
-Deliverable: Wireframe diagrams
+**Brainware University**
 
-Lead: Aditto
+Department of Computer Science & Engineering
 
-Phase 3: Database & Backend Core (Weeks 3‑4)
-Design database schema (accounts, transactions tables)
+---
 
-Implement helper functions (hash PIN, generate account number, record transactions)
+# 🗓 Development Roadmap
 
-Deliverable: SQL script & backend module
+## 📌 Phase 1 — Project Planning *(Week 1)*
 
-Lead: Ramdas
+✔ Requirement Analysis
 
-Phase 4: Frontend Integration (Weeks 5‑6)
-Build all GUI frames (Login, Register, Dashboard, Admin) – Aditto
+✔ Project Scope
 
-Connect frontend to backend logic – Ramdas & Aditto (pair work)
+✔ Proposal Documentation
 
-Deliverable: Fully functional prototype
+**Lead:** Ramdas
 
-Dependency: Backend core must be completed
+---
 
-Phase 5: Testing & Quality Assurance (Week 7)
-Unit testing (manual) for edge cases (negative amounts, invalid accounts)
+## 🎨 Phase 2 — UI/UX Design *(Week 2)*
 
-UI responsiveness and error handling checks
+✔ Wireframes
 
-Security review (PIN hashing, SQL injection prevention)
+✔ Login Design
 
-Deliverable: Test report
+✔ Dashboard Design
 
-Lead: Aditto
+✔ Admin Panel Design
 
-Phase 6: Documentation & Presentation (Week 8)
-Finalise project report (SRS, design, testing) – Ramdas
+**Lead:** Aditto
 
-Prepare presentation slides and live demo script
+---
 
-Record a demo video if required
+## 🗄 Phase 3 — Backend Development *(Weeks 3–4)*
 
-Deliverable: Final report & presentation
+✔ Database Design
 
-Lead: Ramdas
+✔ Account Module
 
-⚠️ Risk Management
-Risk	Mitigation Strategy
-Loss of database file (bank.db)	Regular backups; include DB creation script
-PIN/security vulnerabilities	Use SHA-256 hashing; never store raw PIN
-Team member unavailability	Cross‑skill tasks; clear documentation
-Integration issues (frontend ↔ backend)	Daily sync meetings; frequent integration tests
-🧰 Tools & Resources
-Communication: WhatsApp / Discord
+✔ Transaction Module
 
-Version Control: Git & GitHub
+✔ PIN Encryption
 
-Design / Wireframing: Figma or pen & paper
+**Lead:** Ramdas
 
-Testing: Manual test cases, Python's unittest (optional extension)
+---
 
-Documentation: Microsoft Word / Google Docs for report, Markdown for README
+## 🖥 Phase 4 — Frontend Integration *(Weeks 5–6)*
 
-🔮 Future Enhancements
-Add password recovery via security questions.
+✔ GUI Development
 
-Export transaction history to CSV/PDF.
+✔ Backend Integration
 
-Implement interest calculation for savings accounts.
+✔ Functional Prototype
 
-Introduce a loan/credit module.
+**Lead:** Ramdas & Aditto
 
-Deploy as a web application using Flask/Django.
+---
 
-📄 License
-This project is licensed under the MIT License – see the LICENSE file for details (if added).
+## 🧪 Phase 5 — Testing *(Week 7)*
 
-🙏 Acknowledgements
-Brainware University for providing the academic platform.
+✔ Manual Testing
 
-Python and Tkinter communities for excellent documentation.
+✔ Error Handling
 
-Our faculty guide for continuous support and feedback.
+✔ Security Validation
 
-}
+✔ Transaction Testing
+
+**Lead:** Aditto
+
+---
+
+## 📑 Phase 6 — Documentation *(Week 8)*
+
+✔ Report
+
+✔ Presentation
+
+✔ Live Demo
+
+✔ Final Submission
+
+**Lead:** Ramdas
+
+---
+
+# ⚠ Risk Management
+
+| Risk | Mitigation |
+|------|------------|
+| Database Loss | Regular Backup |
+| PIN Vulnerability | SHA-256 Encryption |
+| Team Availability | Shared Knowledge |
+| Integration Issues | Frequent Testing |
+
+---
+
+# 🧰 Tools & Resources
+
+### 💬 Communication
+
+- WhatsApp
+- Discord
+
+### 💻 Development
+
+- Python
+- Tkinter
+- SQLite
+
+### 📦 Version Control
+
+- Git
+- GitHub
+
+### 🎨 Design
+
+- Figma
+- Pen & Paper
+
+### 🧪 Testing
+
+- Manual Testing
+- unittest *(Optional)*
+
+### 📄 Documentation
+
+- Microsoft Word
+- Google Docs
+- Markdown
+
+---
+
+# 🔮 Future Enhancements
+
+- 🔐 Password Recovery
+- 📄 Export Transaction History (PDF/CSV)
+- 💹 Savings Interest Calculator
+- 💳 Loan Management Module
+- 🌐 Flask/Django Web Version
+- ☁ Cloud Database Integration
+- 📱 Mobile Application
+- 📊 Financial Analytics Dashboard
+
+---
+
+# 📄 License
+
+This project is licensed under the **MIT License**.
+
+See the **LICENSE** file for more information.
+
+---
+
+# 🙏 Acknowledgements
+
+Special thanks to:
+
+- 🎓 Brainware University
+- 🐍 Python Community
+- 🖥 Tkinter Community
+- 👨‍🏫 Our Faculty Guide
+- ❤️ Everyone who contributed to this project
+
+---
+
+<div align="center">
+
+## ⭐ If you found this project helpful, consider giving it a star!
+
+**Made with ❤️ using Python**
+
+</div>
