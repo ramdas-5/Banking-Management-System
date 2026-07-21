@@ -399,7 +399,6 @@ Department of Computer Science & Engineering
 
 ### 🎨 Design
 
-- Figma
 - Pen & Paper
 
 ### 🧪 Testing
